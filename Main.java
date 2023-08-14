@@ -8,12 +8,12 @@ public class Main {
     private static Random random = new Random();
 
     public static void main(String[] args) {
-        put("1 конструктор");
-        put("2 робот");
-        put("3 кукла");
+        put("1 2 конструктор");
+        put("2 2 робот");
+        put("3 6 кукла");
 
         try {
-            FileWriter writer = new FileWriter("output.txt");
+            FileWriter writer = new FileWriter("toylist.txt");
             for (int i = 0; i < 10; i++) {
                 String result = get();
                 writer.write(result + "\n");
@@ -31,9 +31,9 @@ public class Main {
     static String get() {
         int weight = random.nextInt(10);
         if (weight < 2) {
-            return "1 конструктор";
+            return "1 2 конструктор";
         } else if (weight < 4) {
-            return "2 робот";
+            return "2 2 робот";
         } else {
             String result = queue.poll();
             queue.add(result);
